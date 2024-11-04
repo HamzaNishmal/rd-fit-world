@@ -7,20 +7,18 @@ import Image from 'next/image';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-const Gallery = () => {
+const Gallery = ({photosRef}:any) => {
   const images = [
-    "/images/spotlight-one.webp", 
-    "/images/spotlight-three.png", 
-    "/images/spotlight-two.jpeg", 
-    "/images/spotlight-one.webp",
-    "/images/spotlight-one.webp", 
-    "/images/spotlight-three.png", 
-    "/images/spotlight-two.jpeg", 
-    "/images/spotlight-one.webp"
+    "/images/pic-1.jpg", 
+    "/images/pic-2.jpg", 
+    "/images/pic-3.jpg", 
+    "/images/pic-1.jpg", 
+    "/images/pic-2.jpg", 
+    "/images/pic-3.jpg", 
   ];
 
   return (
-    <section className="gallery py-16 bg-gray-900 text-white text-center">
+    <section className="gallery py-16 bg-gray-900 text-white text-center" ref={photosRef}>
       <h2 className="text-2xl md:text-3xl font-bold mb-8 animate-fadeInUp">Gym Photos</h2>
       
       <Swiper
@@ -46,7 +44,7 @@ const Gallery = () => {
                 alt={`Gym Photo ${index}`}
                 width={1920}
                 height={1080}
-                className="rounded-lg hover:opacity-80 transition duration-300 object-cover w-full h-auto aspect-video"
+                className="rounded-lg hover:opacity-80 transition duration-300 object-cover w-full h-auto aspect-square	"
               />
             </div>
           </SwiperSlide>

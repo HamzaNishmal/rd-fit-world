@@ -1,9 +1,16 @@
+// components/_components/Hero.js
+
 import Image from "next/image";
 import bgImage from "../../../public/images/spotlight-four.jpg";
-import memberIcons from "../../../public/images/logo.png"; 
-const Hero = () => {
+import memberIcons from "../../../public/images/logo.png";
+
+const Hero = ({ heroRef }:any) => {
   return (
-    <section className="hero bg-cover bg-center h-screen relative text-white flex items-center justify-center shadow-2xl">
+    <section
+      className="hero bg-cover bg-center h-screen relative text-white flex items-center justify-center shadow-2xl"
+      ref={heroRef}
+    >
+      {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
           src={bgImage}
@@ -14,6 +21,10 @@ const Hero = () => {
         />
       </div>
 
+      {/* Overlay for Background Blurring */}
+      <div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
+
+      {/* Content Container */}
       <div className="container mx-auto flex flex-col items-start justify-center h-full px-4 md:px-8 lg:px-12 relative z-10">
         <div className="w-full md:w-[50%]">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -25,10 +36,11 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Member Info at Bottom Right */}
       <div className="absolute bottom-8 right-8 flex items-center space-x-4">
         <div className="flex -space-x-3">
           <Image
-            src={memberIcons} 
+            src={memberIcons}
             alt="Active Members"
             width={50}
             height={50}
@@ -37,7 +49,7 @@ const Hero = () => {
         </div>
 
         <div className="text-sm md:text-base">
-          <span className="block font-semibold">100+</span>
+          <span className="block font-semibold">500+</span>
           <span className="block">Active Members</span>
         </div>
       </div>

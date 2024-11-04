@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const Trainers = () => {
+const Trainers = ({trainersRef}:any) => {
   const trainer = { name: "Rasheedh", image: "/images/trainer.jpg" };
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [formErrors, setFormErrors] = useState({ name: "", email: "", phone: "" });
@@ -37,12 +37,12 @@ const Trainers = () => {
   };
 
   return (
-    <section className="bg-lightBg dark:bg-darkBg trainers py-16">
+    <section className="bg-lightBg dark:bg-darkBg trainers py-16" ref={trainersRef}>
       <h2 className="text-2xl md:text-3xl font-bold mb-8 animate-fadeInUp text-black dark:text-white text-center">
-        Meet Expert Trainers
+        Meet Expert Trainer
       </h2>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-12 max-w-6xl mx-auto">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-12 max-w-6xl w-[90%] mx-auto">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <div className="aspect-[4/4] overflow-hidden rounded-lg mb-4">
             <Image
