@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Logo from "../../../public/images/black-logo.jpeg";
 import Map from "../../../public/images/map.png";
 import { FaInstagram, FaFacebookF, FaEnvelope } from 'react-icons/fa';
-import { QRCodeSVG } from 'qrcode.react';
 
 const Footer = ({ 
   contactNumbers = ["99468 08011", "73063 28287"], 
@@ -109,22 +108,6 @@ const Footer = ({
             <Image src={Map} alt="map" width={24} height={24} className="mr-2" />
             View Map
           </a>
-
-          <div className="mt-4 flex flex-col items-center lg:items-start">
-            <h4 className="text-xl font-semibold text-black dark:text-white">
-              Scan QR Code
-            </h4>
-            <QRCodeSVG
-              value="https://rd-fit-world.vercel.app/"
-              size={100}
-              fgColor="#000000"
-              bgColor="#ffffff"
-              className="mt-2"
-            />
-            <p className="text-gray-500 dark:text-gray-400 mt-2">
-              Scan to visit our website
-            </p>
-          </div>
         </div>
       </div>
 
